@@ -71,7 +71,6 @@ def tod():
     titik = [
      '\x1b[1;92m.   ', '\x1b[1;93m..  ', '\x1b[1;96m... ', '\x1b[1;92m.   ', '\x1b[1;93m..  ', '\x1b[1;96m... ']
     for x in titik:
-   print '\r %s[%s\xc3\x97%s] Delete token %s' % (P, M, P, x),
         sys.stdout.flush()
         time.sleep(1)
 
