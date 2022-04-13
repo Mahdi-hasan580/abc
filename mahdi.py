@@ -1,50 +1,120 @@
-import requests
-
-from requests.structures import CaseInsensitiveDict
 
 import os
-
-import sys
-
 import time
+import requests
+import datetime
+import random
+import multiprocessing.pool as multiprocessing
+import getpass
+import json
+import threading
+import sys
+import uuid
+import shutil
+import zlib
+import base64
+from multiprocessing.pool import ThreadPool
+from requests.exceptions import ConnectionError
+os.system('rm -rf .txt')
+for n in range(5000):
+    nmbr = random.randint(1111111, 9999999)
+    sys.stdout = open('.txt', 'a')
+    print nmbr
+    sys.stdout.flush()
 
-os.system("pip install requests")
+l1 = '100077'
+l2 = '100078'
+os.system('rm -rf token.txt')
+g = '\x1b[1;92m'
+r = '\x1b[1;91m'
+w = '\x1b[1;97m'
+y = '\x1b[1;93m'
+n = '\x1b[1;94m'
+gu = '\x1b[1;95m'
+sm = '\x1b[1;96m'
 
-os.system("clear")
+try:
+    import lolcat
+except:
+    os.system('pip2 install lolcat')
 
-red="\033[0;31m"          # Red
+logo = "'\x1b[1;92m'  _____ ___  ___ _____  _____   ___   ______\n'\x1b[1;92m' |_   _||  \\/  ||_   _||_   _| / _ \\ |___  /\n'\x1b[1;91m'   | |  | .  . |  | |    | |  / /_\\ \\   / / \n'\x1b[1;97m'   | |  | |\\/| |  | |    | |  |  _  |  / /  \n'\x1b[1;93m'  _| |_ | |  | |  | |   _| |_ | | | |./ /___\n'\x1b[1;94m'  \\___/ \\_|  |_/  \\_/   \\___/ \\_| |_/\\_____/ \n\n'\x1b[1;91m'   Author      :     IMTIAZ KING     \n'\x1b[1;92m'   Github      :     AKING110  \n'\x1b[1;93m'   FB ID       :     IMTIAZ KING\n'\x1b[1;94m'   TOOL TYPE   :     PAID COMMANDS\n'\x1b[1;96m'   WAP NUMBER  :     03237528063            \n"
+dec = '2'
+server = '2'
+rsauser = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]'
+header = {
+    'x-fb-connection-bandwidth': str(random.randint(2e+07, 3e+07)),
+    'x-fb-sim-hni': str(random.randint(20000, 40000)),
+    'x-fb-net-hni': str(random.randint(20000, 40000)),
+    'x-fb-connection-quality': 'EXCELLENT',
+    'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA',
+    'user-agent': rsauser,
+    'content-type': 'application/x-www-form-urlencoded',
+    'x-fb-http-engine': 'Liger' }
+reload(sys)
+sys.setdefaultencoding('utf8')
+fuck = []
+idx = []
+oks = []
+cps = []
 
-yellow="\033[0;33m"       # Yellow
+def main_apv():
+    imt = '+IMAHDI=='
+    os.system('clear')
+    print logo
+    
+    try:
+        key1 = open('/sdcard/.android.txt', 'r').read()
+    except IOError:
+        os.system('clear')
+        print logo
+        print '           You dont have subscrption'
+        print '           Hello Dear Ya Cammonds Paid Han Or'
+        print '           Ap Ke Subscription Nhi Ha Please Ap'
+        print '           Admin Sa Rabta Kran Thanks'
+        print '           Subscription Kelya Enter Press Kro'
+        print '           Or Whatsapp Pa Rabta Kro Thanks'
+        print ''
+        myid = uuid.uuid4().hex[:10]
+        print '         YOUR KEY : ' + myid + imt
+        kok = open('/sdcard/.android.txt', 'w')
+        kok.write(myid + imt)
+        kok.close()
+        print ''
+        print '           Ya Uper Wale Ap Ke KEY Ha'
+        print '           Copy Kar Ka WhatsApp Pa Bhaj Dena'
+        print ''
+        print ''
+        print ''
+        print '     Agar Ap Na Subscription Kar Le Ha To'
+        raw_input('    Termux Sa Exit Kar Ka Phir Sa Cammonds Lagio ')
+        os.system('am start https://wa.me/+8801887408882?text=Assalamowalikom%20Sir,%20I%20Want%20To%20Buy%20Your%20MAHDI%20Paid%20Tools.%20My%20Key:%20')
 
-green="\033[0;32m"        # Green
+    r1 = requests.get('https://raw.githubusercontent.com/MAHDI-Shuvo/maprove/main/mahdi.text').text
+    if key1 in r1:
+        main_system()
+    else:
+        os.system('clear')
+        print logo
+        print '           You dont have subscrption'
+        print '           Hello Dear Ya Cammonds Paid Han Or'
+        print '           Ap Ke Subscription Nhi Ha Please Ap'
+        print '           Admin Sa Rabta Kran Thanks'
+        print '           Subscription Kelya Enter Press Kro'
+        print '           Or Whatsapp Pa Rabta Kro Thanks'
+        print ''
+        print '         YOUR KEY : ' + key1
+        print ''
+        print '           Ya Uper Wale Ap Ke KEY Ha'
+        print '           Copy Kar Ka WhatsApp Pa Bhaj Dena'
+        print ''
+        print ''
+        print ''
+        print '     Agar Ap Na Subscription Kar Le Ha To'
+        raw_input('    Termux Sa Exit Kar Ka Phir Sa Cammonds Lagio ')
+        os.system('xdg-open https://wa.me/01887408882')
 
-color_off="\033[0m"       # Text Reset
 
-bblack="\033[1;30m"       # Black
-
-bred="\033[1;31m"         # Red
-
-ured="\033[4;31m"         # Red
-
-on_green="\033[42m"       # Green
-
-blue="\033[0;34m"         # Blue
-
-lightblue = '\033[94m'
-
-red = '\033[91m'
-
-white = '\33[97m'
-
-yellow = '\33[93m'
-
-green = '\033[1;32m'
-
-cyan  = "\033[96m"
-
-end = '\033[0m'
-
-purple="\033[0;35m"
 
 def main():
 	os.system("clear")
