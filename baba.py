@@ -63,7 +63,7 @@ def jalan(z):
 def tik():
     titik = ['\x1b[1;92m.   ', '\x1b[1;93m..  ', '\x1b[1;96m... ', '\x1b[1;92m.   ', '\x1b[1;93m..  ', '\x1b[1;96m... ']
     for o in titik:
-        print '\r %s[%s+%s] Please wait %s' % (P, O, P, o),
+  print '\r %s[%s+%s] Please wait %s' % (P, O, P, o),
         sys.stdout.flush()
         time.sleep(1)
 
@@ -72,7 +72,7 @@ def tod():
     titik = [
      '\x1b[1;92m.   ', '\x1b[1;93m..  ', '\x1b[1;96m... ', '\x1b[1;92m.   ', '\x1b[1;93m..  ', '\x1b[1;96m... ']
     for x in titik:
-        print '\r %s[%s\xc3\x97%s] Delete token %s' % (P, M, P, x),
+   print '\r %s[%s\xc3\x97%s] Delete token %s' % (P, M, P, x),
         sys.stdout.flush()
         time.sleep(1)
 
